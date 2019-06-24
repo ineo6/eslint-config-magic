@@ -26,7 +26,7 @@
 安装：
 
 ```bash
-npm install --save-dev eslint babel-eslint eslint-config-magic
+npm install --save-dev eslint babel-eslint eslint-config-airbnb-base eslint-plugin-import eslint-config-magic
 ```
 
 在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
