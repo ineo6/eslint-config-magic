@@ -10,19 +10,18 @@ module.exports = {
 
     plugins: ['import'],
 
-    rules: {
-        'import/no-extraneous-dependencies': 0,
-        'import/prefer-default-export': 0,
-        'import/no-unresolved': 0,
-        // todo enable
+    settings: {
+        'import/resolver': {
+            node: {
+                extensions: ['.mjs', '.js', '.jsx', '.json']
+            }
+        },
         'import/extensions': [
-            0,
-            'never',
-            {
-                ignorePackages: true,
-            },
+            '.js',
+            '.mjs',
+            '.jsx',
         ],
-        // todo enable
-        'import/named': 1,
     },
+
+    rules: {},
 };
