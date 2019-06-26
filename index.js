@@ -58,5 +58,15 @@ module.exports = {
         // todo error
         // prettier conflict
         'space-before-function-paren': 0,
+        'operator-linebreak': [
+            'error',
+            'after',
+            {
+                overrides: {
+                    '?': 'before',
+                    ':': 'before',
+                },
+            },
+        ],
     }
 };
