@@ -20,6 +20,7 @@ module.exports = {
             extensions: ['.d.ts', '.js', '.jsx', '.mjs', '.ts', '.tsx'],
           },
         },
+        'import/extensions': ['.d.ts', '.js', '.jsx', '.mjs', '.ts', '.tsx']
       },
       plugins: ['@typescript-eslint'],
       // workaround before support extends in overrides: https://github.com/eslint/eslint/issues/8813
@@ -27,9 +28,6 @@ module.exports = {
         /** https://github.com/eslint/eslint/issues/11464 */
         'no-useless-constructor': 'off',
         '@typescript-eslint/no-useless-constructor': 'warn',
-        /** https://github.com/yannickcr/eslint-plugin-react/issues/2187 */
-        'react/prefer-stateless-function': 'off',
-        'react/jsx-filename-extension': [1, { extensions: ['.ts', '.tsx'] }],
         '@typescript-eslint/indent': [
           2,
           2,
