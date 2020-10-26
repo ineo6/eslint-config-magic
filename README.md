@@ -34,7 +34,7 @@ npm install --save-dev eslint babel-eslint eslint-config-airbnb-base eslint-plug
 ```js
 module.exports = {
     extends: [
-        'eslint-config-magic',
+        'magic',
     ],
     globals: {
         // 这里填入你的项目需要的全局变量
@@ -62,7 +62,8 @@ npm install --save-dev eslint babel-eslint eslint-config-airbnb eslint-plugin-im
 ```js
 module.exports = {
     extends: [
-        'eslint-config-magic/react',
+        'magic',
+        'magic/react',
     ],
     rules: {
         // 这里填入你的项目需要的个性化配置:
@@ -83,7 +84,8 @@ npm install --save-dev eslint babel-eslint typescript @typescript-eslint/eslint-
 ```js
 module.exports = {
     extends: [
-        'eslint-config-magic/typescript',
+        'magic',
+        'magic/typescript',
     ],
     rules: {
         // 这里填入你的项目需要的个性化配置：
@@ -104,8 +106,9 @@ npm install --save-dev eslint babel-eslint typescript @typescript-eslint/eslint-
 ```js
 module.exports = {
     extends: [
-        'eslint-config-magic/react',
-        'eslint-config-magic/typescript',
+        'magic',
+        'magic/react',
+        'magic/typescript',
     ],
     rules: {
         // 这里填入你的项目需要的个性化配置:

@@ -1,28 +1,27 @@
+const {rules: baseImportsRules} = require('eslint-config-airbnb-base/rules/imports');
+
 module.exports = {
-  extends: ['./index.js', 'plugin:@typescript-eslint/eslint-recommended'],
+  extends: ['plugin:@typescript-eslint/eslint-recommended'],
   parser: '@typescript-eslint/parser',
+  parserOptions: {
+    sourceType: 'module',
+  },
+  plugins: ['@typescript-eslint'],
   settings: {
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx'],
     },
+    'import/resolver': {
+      node: {
+        // Allow import and resolve for *.ts modules.
+        extensions: ['.d.ts', '.js', '.jsx', '.mjs', '.ts', '.tsx'],
+      },
+    },
+    'import/extensions': ['.d.ts', '.js', '.jsx', '.mjs', '.ts', '.tsx']
   },
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
-      parser: '@typescript-eslint/parser',
-      parserOptions: {
-        sourceType: 'module',
-      },
-      settings: {
-        'import/resolver': {
-          node: {
-            // Allow import and resolve for *.ts modules.
-            extensions: ['.d.ts', '.js', '.jsx', '.mjs', '.ts', '.tsx'],
-          },
-        },
-        'import/extensions': ['.d.ts', '.js', '.jsx', '.mjs', '.ts', '.tsx']
-      },
-      plugins: ['@typescript-eslint'],
       // workaround before support extends in overrides: https://github.com/eslint/eslint/issues/8813
       rules: {
         /** https://github.com/eslint/eslint/issues/11464 */
@@ -36,18 +35,18 @@ module.exports = {
           },
         ],
         '@typescript-eslint/explicit-member-accessibility': 'off',
+        // Append 'ts' and 'tsx' to Airbnb 'import/extensions' rule
+        // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md
         'import/extensions': [
-          'error',
-          'ignorePackages',
+          baseImportsRules['import/extensions'][0],
+          baseImportsRules['import/extensions'][1],
           {
-            'js': 'never',
-            'jsx': 'never',
-            'ts': 'never',
-            'tsx': 'never'
-          }
-        ]
+            ...baseImportsRules['import/extensions'][2],
+            ts: 'never',
+            tsx: 'never',
+          },
+        ],
       },
     },
-
   ]
 };

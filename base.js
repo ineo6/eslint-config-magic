@@ -6,8 +6,7 @@ module.exports = {
     sourceType: 'module',
     ecmaFeatures: {
       // 开启全局 script 模式
-      impliedStrict: true,
-      jsx: true
+      impliedStrict: true
     },
     // 即使没有 babelrc 配置文件，也使用 babel-eslint 来解析
     requireConfigFile: false,

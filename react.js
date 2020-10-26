@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['airbnb', './rules/jsx-a11y.js', './index.js'],
+  extends: ['airbnb'],
   rules: {
     'react/jsx-indent': ['error', 2],
     'react/jsx-indent-props': ['error', 2],
