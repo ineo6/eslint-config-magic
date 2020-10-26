@@ -1,5 +1,10 @@
 module.exports = {
-  extends: ['airbnb-base', './base.js'],
+  extends: [
+    'airbnb-base',
+    './base.js',
+    'plugin:eslint-comments/recommended',
+    'plugin:promise/recommended',
+  ],
   rules: {
     'max-len': ['error', 150],
     indent: ['error', 2, { SwitchCase: 1 }],
@@ -16,5 +21,5 @@ module.exports = {
         },
       },
     ],
-  }
+  },
 };

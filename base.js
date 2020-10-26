@@ -6,7 +6,7 @@ module.exports = {
     sourceType: 'module',
     ecmaFeatures: {
       // 开启全局 script 模式
-      impliedStrict: true
+      impliedStrict: true,
     },
     // 即使没有 babelrc 配置文件，也使用 babel-eslint 来解析
     requireConfigFile: false,
@@ -15,8 +15,8 @@ module.exports = {
     browser: true,
     node: true,
     commonjs: true,
-    es6: true
+    es6: true,
   },
   // 以当前目录为根目录，不再向上查找 .eslintrc.js
-  root: true
+  root: true,
 };

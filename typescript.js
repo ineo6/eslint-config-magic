@@ -1,4 +1,4 @@
-const {rules: baseImportsRules} = require('eslint-config-airbnb-base/rules/imports');
+const { rules: baseImportsRules } = require('eslint-config-airbnb-base/rules/imports');
 
 module.exports = {
   extends: ['plugin:@typescript-eslint/eslint-recommended'],
@@ -17,7 +17,7 @@ module.exports = {
         extensions: ['.d.ts', '.js', '.jsx', '.mjs', '.ts', '.tsx'],
       },
     },
-    'import/extensions': ['.d.ts', '.js', '.jsx', '.mjs', '.ts', '.tsx']
+    'import/extensions': ['.d.ts', '.js', '.jsx', '.mjs', '.ts', '.tsx'],
   },
   overrides: [
     {
@@ -48,5 +48,5 @@ module.exports = {
         ],
       },
     },
-  ]
+  ],
 };

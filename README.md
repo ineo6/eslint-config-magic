@@ -1,8 +1,18 @@
 # Magic ESLint 规则
 
-
 统一 ESLint 配置规范。
 
+## 安装
+
+```
+npm install eslint-config-magic --save-dev
+```
+
+### 安装其依赖（peerDependencies）
+
+```sh
+npx install-peerdeps --dev eslint-config-magic
+```
 
 ## 规则列表
 
@@ -22,12 +32,6 @@
 ## 使用方法
 
 ### 标准规则
-
-安装：
-
-```bash
-npm install --save-dev eslint babel-eslint eslint-config-airbnb-base eslint-plugin-import eslint-config-magic
-```
 
 在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
 
@@ -51,12 +55,6 @@ module.exports = {
 
 ### React
 
-安装：
-
-```bash
-npm install --save-dev eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y eslint-config-magic
-```
-
 在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
 
 ```js
@@ -73,12 +71,6 @@ module.exports = {
 
 ### TypeScript
 
-安装：
-
-```bash
-npm install --save-dev eslint babel-eslint typescript @typescript-eslint/eslint-plugin eslint-config-magic
-```
-
 在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
 
 ```js
@@ -94,12 +86,6 @@ module.exports = {
 ```
 
 ### TypeScript React
-
-安装：
-
-```bash
-npm install --save-dev eslint babel-eslint typescript @typescript-eslint/eslint-plugin eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y eslint-config-magic
-```
 
 在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
 
