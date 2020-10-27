@@ -1,25 +1,27 @@
 module.exports = {
   extends: [
-    'airbnb-base',
     './base.js',
-    'plugin:eslint-comments/recommended',
-    'plugin:promise/recommended',
+    'airbnb-base',
   ],
+  parserOptions: {
+    ecmaVersion: 6,
+    // ECMAScript modules 模式
+    sourceType: 'module',
+    ecmaFeatures: {
+      // 开启全局 script 模式
+      impliedStrict: true,
+    },
+    // 即使没有 babelrc 配置文件，也使用 babel-eslint 来解析
+    requireConfigFile: false,
+  },
+  env: {
+    browser: true,
+    node: true,
+    commonjs: true,
+    es6: true,
+  },
+  // 以当前目录为根目录，不再向上查找 .eslintrc.js
+  root: true,
   rules: {
-    'max-len': ['error', 150],
-    indent: ['error', 2, { SwitchCase: 1 }],
-    'no-debugger': 1,
-    // prettier conflict
-    'space-before-function-paren': 0,
-    'operator-linebreak': [
-      'error',
-      'after',
-      {
-        overrides: {
-          '?': 'before',
-          ':': 'before',
-        },
-      },
-    ],
   },
 };
