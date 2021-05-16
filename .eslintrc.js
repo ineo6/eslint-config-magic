@@ -1,5 +1,6 @@
 module.exports = {
-  extends: ['./index'],
-  globals: {},
-  rules: {},
+  extends: ['./index.js', './react.js', './typescript.js'],
+  globals: {
+    Prism: false,
+  },
 };
