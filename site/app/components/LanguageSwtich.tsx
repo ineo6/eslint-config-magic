@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 
-import { newUrl } from '../utils';
-import { languageOptions, Languages } from '../../config';
+import { newUrl } from '../utils/utils';
+import { languageOptions, Languages } from '../../../config';
 
 interface LanguagesProps {
   language: Languages;

@@ -12,7 +12,7 @@ import xmlEscape from 'xml-escape';
 
 import { NAMESPACE_CONFIG, NAMESPACES, buildEslintrcMeta, Namespace, Rule, locale } from '../config';
 
-import '../site/vendor/prism';
+import '../site/public/prism/prism';
 
 declare const Prism: any;
 

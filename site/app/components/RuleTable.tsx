@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { NAMESPACE_CONFIG, Namespace, Rule } from '../../config';
-import { parseDescription, t } from '../utils';
+import { NAMESPACE_CONFIG, Namespace, Rule } from '../../../config';
+import { parseDescription, t } from '../utils/utils';
 
 interface RuleTableProps {
   namespace: Namespace;
@@ -10,11 +10,11 @@ interface RuleTableProps {
 
 export const RuleTable: React.SFC<RuleTableProps> = ({ namespace, hideOff }) => {
   return (
-    <div className="container-fluid">
-      <div className="flex-left flex-wrap units-gap hide-on-mobile">
-        <h3 className="unit-1-3 unit-1-on-mobile site-table-header-text">{t('规则说明')}</h3>
-        <h3 className="unit-1-3 unit-1-on-mobile text-danger site-table-header-text">{t('错误的示例')}</h3>
-        <h3 className="unit-1-3 unit-1-on-mobile text-success site-table-header-text">{t('正确的示例')}</h3>
+    <div className="content">
+      <div className="title-row hide-on-mobile">
+        <h3 className="col3 site-table-header-text">{t('规则说明')}</h3>
+        <h3 className="col3 text-danger site-table-header-text">{t('错误的示例')}</h3>
+        <h3 className="col3 text-success site-table-header-text">{t('正确的示例')}</h3>
       </div>
       {Object.values<Rule>(NAMESPACE_CONFIG[namespace].ruleConfig).map(
         ({
@@ -31,7 +31,7 @@ export const RuleTable: React.SFC<RuleTableProps> = ({ namespace, hideOff }) => 
           <div
             id={name}
             key={name}
-            className={`flex-left flex-wrap top-gap-big units-gap site-row ${
+            className={`rule-row site-row ${
               value === 'off' ? 'site-row-off site-row-wide' : ''
             }`}
             style={
@@ -42,7 +42,7 @@ export const RuleTable: React.SFC<RuleTableProps> = ({ namespace, hideOff }) => 
                 : {}
             }
           >
-            <div className="unit-1-3 unit-1-on-mobile site-desc">
+            <div className="rule-desc col3">
               <a href={NAMESPACE_CONFIG[namespace].getDocsUrl(name)}>{name}</a>
               &nbsp;&nbsp;
               <span data-tip={t('可使用 --fix 自动修复')} data-type="success">
@@ -58,14 +58,14 @@ export const RuleTable: React.SFC<RuleTableProps> = ({ namespace, hideOff }) => 
                 #
               </a>
               <p
-                className="top-gap-0"
+                className=""
                 dangerouslySetInnerHTML={{
                   __html: parseDescription(t(description)),
                 }}
               />
               {reason && (
                 <p
-                  className="text-muted text-small"
+                  className=""
                   style={{ marginTop: 5 }}
                   dangerouslySetInnerHTML={{
                     __html: parseDescription(reason),
@@ -73,7 +73,7 @@ export const RuleTable: React.SFC<RuleTableProps> = ({ namespace, hideOff }) => 
                 />
               )}
               {Array.isArray(value) && (
-                <div className="text-muted text-small site-rule-value">
+                <div className="site-rule-value">
                   {t('配置：')}
                   {typeof value[1] === 'object' ? (
                     <pre>
@@ -85,7 +85,7 @@ export const RuleTable: React.SFC<RuleTableProps> = ({ namespace, hideOff }) => 
                 </div>
               )}
             </div>
-            <div className="unit-1-3 unit-1-on-mobile">
+            <div className="bad-example col3">
               {badExample && (
                 <pre className={`language-${NAMESPACE_CONFIG[namespace].prismLanguage} site-code`}>
                   <code
@@ -96,7 +96,7 @@ export const RuleTable: React.SFC<RuleTableProps> = ({ namespace, hideOff }) => 
                 </pre>
               )}
             </div>
-            <div className="unit-1-3 unit-1-on-mobile">
+            <div className="goo-example col3">
               {goodExample && (
                 <pre className={`language-${NAMESPACE_CONFIG[namespace].prismLanguage}  site-code`}>
                   <code

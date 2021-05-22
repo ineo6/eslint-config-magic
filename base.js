@@ -4,13 +4,7 @@
  *
  * 贡献者：
  *   ineo6
- *   heyli <lcxfs1991@gmail.com>
- *   Swan <noreply@github.com>
- *   DiamondYuan <admin@diamondyuan.com>
- *   Dash Chen <noreply@github.com>
- *   lzw <mingxin2014@gmail.com>
- *   ryoliu <sfesh@163.com>
- *   sunhui04 <sunhui04@meituan.com>
+ *
  *
  * 依赖版本：
  *   eslint ^7.24.0
