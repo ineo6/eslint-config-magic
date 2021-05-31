@@ -1,0 +1,2 @@
+if (typeof foo === 'numbe') {
+}
