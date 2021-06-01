@@ -3,7 +3,9 @@
 .idea
 .editorconfig
 package-lock.json
+yarn.lock
 .npmrc
+.env
 
 # Ignored suffix
 *.log
@@ -11,9 +13,10 @@ package-lock.json
 *.svg
 *.png
 *ignore
+*.ejs
 
 ## Local
-site/vendor
+site/public
 test/base/no-cond-assign/bad.js
 test/base/no-irregular-whitespace/bad.js
 test/base/no-labels/bad.js
@@ -24,6 +27,7 @@ test/react/self-closing-comp/bad.js
 test/vue/no-irregular-whitespace/bad.vue
 test/vue/no-irregular-whitespace/good.vue
 .husky
+site/app/.fe/
 
 ## Built-files
 .cache
