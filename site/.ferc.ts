@@ -5,6 +5,7 @@ export default defineConfig({
   extraBabelIncludes: [
     join(__dirname, '../config'),
   ],
+  base: process.env.NODE_ENV === 'production' ? '/eslint-config-magic/' : '/',
   publicPath: process.env.NODE_ENV === 'production' ? '/eslint-config-magic/' : '/',
   routes: [
     {
