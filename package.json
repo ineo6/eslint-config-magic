@@ -7,9 +7,14 @@
     "build": "ts-node ./scripts/build.ts",
     "add": "ts-node ./scripts/addMissingRules.ts",
     "dev:site": "cd ./site && fe dev",
-    "test:rulesCoverage": "ts-node ./scripts/rulesCoverage.ts"
+    "build:site": "cd ./site && fe build",
+    "test": "ts-node ./test/index.ts && npm run test:rulesCoverage",
+    "test:rulesCoverage": "ts-node ./scripts/rulesCoverage.ts",
+    "lint": "run-s eslint prettier",
+    "eslint": "eslint --ext .js,.jsx,.ts,.tsx,.vue --ignore-pattern \"bad.*\" .",
+    "prettier": "prettier -l \"./**/*\""
   },
-  "homepage": "https://alloyteam.github.io/eslint-config-alloy/",
+  "homepage": "https://ineo6.github.io/eslint-config-magic/",
   "repository": {
     "type": "git",
     "url": "git@github.com:ineo6/eslint-config-magic.git"
@@ -61,6 +66,7 @@
     "insert-tag": "^0.1.2",
     "mobi-plugin-color": "^1.0.0",
     "mobi.css": "^3.1.1",
+    "npm-run-all": "^4.1.5",
     "parcel": "^2.0.0-beta.2",
     "prettier": "^2.3.0",
     "querystring": "^0.2.1",

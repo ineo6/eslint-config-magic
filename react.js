@@ -1,6 +1,6 @@
 /**
  * Magic ESLint 规则
- * https://alloyteam.github.io/eslint-config-alloy/
+ * https://ineo6.github.io/eslint-config-magic/
  *
  * 贡献者：
  *   ineo6

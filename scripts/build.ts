@@ -174,7 +174,6 @@ class Builder {
         }
         content.push(' */');
         // 若继承自基础规则，则需要先关闭基础规则
-        console.log(rule.name)
         const extendsBaseRule = this.ruleMetaMap[rule.name].extendsBaseRule;
         if (extendsBaseRule) {
           content.push(`'${extendsBaseRule}': 'off',`);
