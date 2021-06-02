@@ -42,7 +42,7 @@ const App: React.FC = () => {
               Object.values<Rule>(NAMESPACE_CONFIG[namespace].ruleConfig).map(({ name }) => {
                 return (
                   <li key={name}>
-                    <a href={`/#${name}`}>{name}</a>
+                    <a href={`#${name}`}>{name}</a>
                   </li>
                 )
               })
