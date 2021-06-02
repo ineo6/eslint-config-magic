@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-magic",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Magic ESLint 规则",
   "main": "index.js",
   "scripts": {
