@@ -12,15 +12,30 @@ const App: React.FC = () => {
   const query = getQuery();
   const [namespace, setNamespace] = useState(defaultTo<Namespace>(query.rule, NAMESPACES[0], NAMESPACES));
   const [hideOff, toggleHideOff] = useState(query.hideOff === '1');
+  const [menuCollapsed, setMenuCollapsed] = useState<boolean>(true);
 
   useEffect(() => {
     ReactTooltip.rebuild();
   }, [namespace]);
 
   return (
-    <>
-      <Header namespace={namespace} hideOff={hideOff} setNamespace={setNamespace} toggleHideOff={toggleHideOff}/>
-      <div className="menu">
+    <div
+      onClick={() => {
+        if (menuCollapsed) return;
+        setMenuCollapsed(true)
+      }}
+    >
+      <Header
+        namespace={namespace}
+        hideOff={hideOff}
+        setNamespace={setNamespace}
+        toggleHideOff={toggleHideOff}
+        onHeaderCollapse={(ev: any) => {
+          setMenuCollapsed(val => !val);
+          ev.stopPropagation();
+        }}
+      />
+      <div className={['menu', menuCollapsed ? '' : 'mobile-menu-show'].join(" ")}>
         <div className="menu-container">
           <ul>
             {
@@ -46,7 +61,7 @@ const App: React.FC = () => {
         delayHide={100}
         html={true}
       />
-    </>
+    </div>
   );
 };
 

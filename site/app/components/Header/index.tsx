@@ -6,8 +6,8 @@ import { NAMESPACES, Namespace } from '../../../../config';
 
 import './index.less';
 
-const Index: React.FC<{ namespace: any; hideOff: boolean; setNamespace: Function; toggleHideOff: Function }> = (props) => {
-  const { namespace, hideOff, setNamespace, toggleHideOff } = props;
+const Index: React.FC<{ namespace: any; hideOff: boolean; setNamespace: Function; toggleHideOff: Function, onHeaderCollapse: any }> = (props) => {
+  const { namespace, hideOff, setNamespace, toggleHideOff, onHeaderCollapse } = props;
 
   const language = getLanguage();
 
@@ -17,6 +17,7 @@ const Index: React.FC<{ namespace: any; hideOff: boolean; setNamespace: Function
 
   return (
     <div className="header">
+      <div className="header-toggle" onClick={onHeaderCollapse}/>
       <div className="nav">
         <div className="site-title">eslint-config-magic</div>
         <LanguageSwtich language={language}/>

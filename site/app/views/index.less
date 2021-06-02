@@ -41,6 +41,20 @@ pre code {
     display: flex;
     justify-content: space-between;
   }
+
+  .header-toggle {
+    position: absolute;
+    left: 15px;
+    top: 25px;
+    height: 22px;
+    width: 22px;
+    display: none;
+    background: url("../assets/toggle.png") no-repeat 50%/contain;
+
+    @media @mobile {
+      display: block;
+    }
+  }
 }
 
 .site-row {
