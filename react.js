@@ -7,17 +7,22 @@
  *
  *
  * 依赖版本：
- *   eslint ^7.24.0
+ *   eslint 7.29.0
  *   babel-eslint 10.1.0
- *   eslint-plugin-react ^7.23.2
- *   vue-eslint-parser undefined
- *   eslint-plugin-vue ^7.9.0
- *   @typescript-eslint/parser ^4.23.0
- *   @typescript-eslint/eslint-plugin ^4.23.0
+ *   eslint-plugin-react 7.24.0
+ *   vue-eslint-parser 7.6.0
+ *   eslint-plugin-vue 7.10.0
+ *   @typescript-eslint/parser 4.27.0
+ *   @typescript-eslint/eslint-plugin 4.27.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
 module.exports = {
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   plugins: ['react'],
   rules: {
     /**

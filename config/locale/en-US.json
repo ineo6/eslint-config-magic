@@ -589,5 +589,6 @@
   "禁止在 v-on 的事件名使用横杠": "Enforce v-on event naming style on custom components in template",
   "禁止调用 Vue.nextTick 或 vm.$nextTick 时不使用 await": "Enforce valid `nextTick` function calls",
   "禁止将 any 类型的变量作为函数参数调用": "Disallows calling an function with an any type value",
-  "联合类型和交叉类型的每一项必须按字母排序": "Enforces that members of a type union/intersection are sorted alphabetically"
+  "联合类型和交叉类型的每一项必须按字母排序": "Enforces that members of a type union/intersection are sorted alphabetically",
+  "emits一定要有类型定义": "emits一定要有类型定义"
 }
