@@ -48,7 +48,7 @@
     "cookie": "^0.4.1",
     "eslint": "7.29.0",
     "eslint-config-prettier": "8.3.0",
-    "eslint-plugin-react": "7.24.0",
+    "eslint-plugin-react": "7.26.1",
     "eslint-plugin-vue": "7.10.0",
     "insert-tag": "^0.1.2",
     "mobi-plugin-color": "^1.0.0",
