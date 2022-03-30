@@ -7,17 +7,23 @@
  *
  *
  * 依赖版本：
- *   eslint 7.29.0
- *   babel-eslint 10.1.0
- *   eslint-plugin-react 7.24.0
- *   vue-eslint-parser 7.6.0
- *   eslint-plugin-vue 7.10.0
- *   @typescript-eslint/parser 4.27.0
- *   @typescript-eslint/eslint-plugin 4.27.0
+ *   eslint ^7.32.0
+ *   @babel/eslint-parser ^7.16.5
+ *   @babel/preset-react ^7.16.7
+ *   eslint-plugin-react 7.28.0
+ *   vue-eslint-parser 7.11.0
+ *   eslint-plugin-vue ^7.20.0
+ *   @typescript-eslint/parser ^5.9.1
+ *   @typescript-eslint/eslint-plugin ^5.9.1
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
 module.exports = {
+  parserOptions: {
+    babelOptions: {
+      presets: ['@babel/preset-react'],
+    },
+  },
   settings: {
     react: {
       version: 'detect',
@@ -184,6 +190,10 @@ module.exports = {
      */
     'react/no-array-index-key': 'off',
     /**
+     * Lifecycle methods should be methods on the prototype, not class fields
+     */
+    'react/no-arrow-function-lifecycle': 'error',
+    /**
      * 禁止将 children 作为一个 prop
      */
     'react/no-children-prop': 'error',
@@ -217,6 +227,10 @@ module.exports = {
      */
     'react/no-find-dom-node': 'error',
     /**
+     * Forbid attribute with an invalid values`
+     */
+    'react/no-invalid-html-attribute': 'error',
+    /**
      * 禁止使用 isMounted
      * @reason 它是已废弃的语法
      */
@@ -226,6 +240,10 @@ module.exports = {
      * @reason 有一个 bug：https://github.com/yannickcr/eslint-plugin-react/issues/1181
      */
     'react/no-multi-comp': 'off',
+    /**
+     * Enforce that namespaces are not used in React elements
+     */
+    'react/no-namespace': 'error',
     /**
      * 禁止在 React.PureComponent 中使用 shouldComponentUpdate
      */
@@ -272,6 +290,10 @@ module.exports = {
      */
     'react/no-unstable-nested-components': 'error',
     /**
+     * Prevent declaring unused methods of component class
+     */
+    'react/no-unused-class-component-methods': 'error',
+    /**
      * 禁止出现未使用的 propTypes
      * @reason 类型相关的约束交给 TypeScript
      */
@@ -290,6 +312,10 @@ module.exports = {
      * 必须使用 Class 的形式创建组件
      */
     'react/prefer-es6-class': ['error', 'always'],
+    /**
+     * Prefer exact proptype definitions
+     */
+    'react/prefer-exact-props': 'error',
     /**
      * 使用 Flow 时，props 必须设置为只读的
      */

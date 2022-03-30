@@ -7,22 +7,22 @@
  *
  *
  * 依赖版本：
- *   eslint 7.29.0
- *   babel-eslint 10.1.0
- *   eslint-plugin-react 7.24.0
- *   vue-eslint-parser 7.6.0
- *   eslint-plugin-vue 7.10.0
- *   @typescript-eslint/parser 4.27.0
- *   @typescript-eslint/eslint-plugin 4.27.0
+ *   eslint ^7.32.0
+ *   @babel/eslint-parser ^7.16.5
+ *   @babel/preset-react ^7.16.7
+ *   eslint-plugin-react 7.28.0
+ *   vue-eslint-parser 7.11.0
+ *   eslint-plugin-vue ^7.20.0
+ *   @typescript-eslint/parser ^5.9.1
+ *   @typescript-eslint/eslint-plugin ^5.9.1
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
 module.exports = {
   parser: 'vue-eslint-parser',
   parserOptions: {
-    // 设置 js 的解析器为 babel-eslint
-    // https://github.com/mysticatea/vue-eslint-parser#-options
-    parser: 'babel-eslint',
+    // 设置 js 的解析器为 @babel/eslint-parser
+    parser: '@babel/eslint-parser',
     ecmaVersion: 2019,
     // ECMAScript modules 模式
     sourceType: 'module',
@@ -33,7 +33,7 @@ module.exports = {
       impliedStrict: true,
       jsx: true,
     },
-    // 即使没有 babelrc 配置文件，也使用 babel-eslint 来解析
+    // 即使没有 babelrc 配置文件，也使用 @babel/eslint-parser 来解析
     requireConfigFile: false,
     // 仅允许 import export 语句出现在模块的顶层
     allowImportExportEverywhere: false,
@@ -49,6 +49,10 @@ module.exports = {
      */
     'vue/attributes-order': 'error',
     /**
+     * disallow use other than available `lang`
+     */
+    'vue/block-lang': 'error',
+    /**
      * 变量名必须是 camelCase 风格的
      * @reason 很多 api 或文件名都不是 camelCase 风格的
      */
@@ -58,6 +62,10 @@ module.exports = {
      * 支持在模版中使用 eslint-disable-next-line 等注释
      */
     'vue/comment-directive': 'error',
+    /**
+     * enforce component API style
+     */
+    'vue/component-api-style': 'error',
     /**
      * 组件的 name 属性必须符合 PascalCase
      * @reason 这是官方建议的规范
@@ -93,10 +101,6 @@ module.exports = {
     eqeqeq: 'off',
     'vue/eqeqeq': ['error', 'always'],
     /**
-     * 避免 <script setup> 中的变量被视为未定义
-     */
-    'vue/experimental-script-setup-vars': 'error',
-    /**
      * button 标签必须有 type 属性
      */
     'vue/html-button-has-type': 'off',
@@ -124,6 +128,10 @@ module.exports = {
      */
     'vue/match-component-file-name': 'off',
     /**
+     * require component names to be always multi-word
+     */
+    'vue/multi-word-component-names': 'error',
+    /**
      * 多行属性之间必须有空行
      * @reason 代码格式问题，最好由 Prettier 解决
      */
@@ -149,6 +157,10 @@ module.exports = {
      * @reason 类型相关的约束交给 TypeScript
      */
     'vue/no-boolean-default': 'off',
+    /**
+     * disallow accessing computed properties in `data`.
+     */
+    'vue/no-computed-properties-in-data': 'error',
     /**
      * 禁止将常量作为分支条件判断中的测试表达式，但允许作为循环条件判断中的测试表达式
      */
@@ -199,6 +211,10 @@ module.exports = {
      */
     'vue/no-deprecated-props-default-this': 'error',
     /**
+     * disallow using deprecated `tag` property on `RouterLink` (in Vue.js 3.0.0+)
+     */
+    'vue/no-deprecated-router-link-tag-prop': 'error',
+    /**
      * 禁用已废弃的 scope 属性
      */
     'vue/no-deprecated-scope-attribute': 'error',
@@ -214,6 +230,10 @@ module.exports = {
      * 禁止在 v-bind 指令中使用已废弃的 .sync 修饰符
      */
     'vue/no-deprecated-v-bind-sync': 'error',
+    /**
+     * disallow deprecated `v-is` directive (in Vue.js 3.1.0+)
+     */
+    'vue/no-deprecated-v-is': 'error',
     /**
      * 禁止使用已废弃的 .native 修饰符
      */
@@ -257,6 +277,10 @@ module.exports = {
      */
     'no-empty-pattern': 'off',
     'vue/no-empty-pattern': 'error',
+    /**
+     * disallow `export` in `<script setup>`
+     */
+    'vue/no-export-in-script-setup': 'error',
     /**
      * 禁止 model 中出现错误的属性
      */
@@ -328,6 +352,10 @@ module.exports = {
      */
     'vue/no-restricted-call-after-await': 'off',
     /**
+     * disallow specific classes in Vue components
+     */
+    'vue/no-restricted-class': 'error',
+    /**
      * 禁止使用指定的组件选项
      */
     'vue/no-restricted-component-options': 'off',
@@ -390,6 +418,14 @@ module.exports = {
      */
     'vue/no-textarea-mustache': 'error',
     /**
+     * disallow `this` usage in a `beforeRouteEnter` method
+     */
+    'vue/no-this-in-before-route-enter': 'error',
+    /**
+     * disallow undefined properties
+     */
+    'vue/no-undef-properties': 'error',
+    /**
      * 禁止使用未注册的组件
      */
     'vue/no-unregistered-components': 'off',
@@ -415,6 +451,10 @@ module.exports = {
      */
     'vue/no-unused-vars': 'error',
     /**
+     * disallow use computed property like method
+     */
+    'vue/no-use-computed-property-like-method': 'error',
+    /**
      * 禁止在同一个元素上使用 v-if 和 v-for 指令
      */
     'vue/no-use-v-if-with-v-for': 'error',
@@ -427,6 +467,10 @@ module.exports = {
      * 禁止出现无用的 mustache 字符串
      */
     'vue/no-useless-mustaches': 'error',
+    /**
+     * disallow useless attribute on `<template>`
+     */
+    'vue/no-useless-template-attributes': 'error',
     /**
      * 禁止出现无用的 v-bind
      */
@@ -447,6 +491,10 @@ module.exports = {
      * 禁止给 v-model 属性添加参数
      */
     'vue/no-v-model-argument': 'error',
+    /**
+     * disallow use of v-text
+     */
+    'vue/no-v-text': 'error',
     /**
      * 禁止在 await 之后调用 watch
      */
@@ -495,6 +543,10 @@ module.exports = {
      */
     'vue/require-explicit-emits': 'error',
     /**
+     * require declare public properties using `expose`
+     */
+    'vue/require-expose': 'error',
+    /**
      * 组件必须包含 name 属性
      */
     'vue/require-name-property': 'off',
@@ -538,6 +590,10 @@ module.exports = {
      */
     'vue/return-in-emits-validator': 'error',
     /**
+     * prevent `<script setup>` variables used in `<template>` to be marked as unused
+     */
+    'vue/script-setup-uses-vars': 'error',
+    /**
      * props 的键名必须排好序
      */
     'vue/sort-keys': 'off',
@@ -577,6 +633,14 @@ module.exports = {
      * 使用缩写的 #one 而不是 v-slot:one
      */
     'vue/v-slot-style': 'off',
+    /**
+     * enforce valid `defineEmits` compiler macro
+     */
+    'vue/valid-define-emits': 'error',
+    /**
+     * enforce valid `defineProps` compiler macro
+     */
+    'vue/valid-define-props': 'error',
     /**
      * 禁止调用 Vue.nextTick 或 vm.$nextTick 时不使用 await
      */
@@ -621,6 +685,10 @@ module.exports = {
      * v-is 指令必须合法
      */
     'vue/valid-v-is': 'error',
+    /**
+     * enforce valid `v-memo` directives
+     */
+    'vue/valid-v-memo': 'error',
     /**
      * v-model 指令必须合法
      */

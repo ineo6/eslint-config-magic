@@ -395,6 +395,17 @@
     "extendsBaseRule": "",
     "requiresTypeChecking": false
   },
+  "react/no-arrow-function-lifecycle": {
+    "name": "react/no-arrow-function-lifecycle",
+    "value": "error",
+    "description": "Lifecycle methods should be methods on the prototype, not class fields",
+    "reason": "",
+    "badExample": "",
+    "goodExample": "",
+    "fixable": true,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": false
+  },
   "react/no-children-prop": {
     "name": "react/no-children-prop",
     "value": "error",
@@ -483,6 +494,17 @@
     "extendsBaseRule": "",
     "requiresTypeChecking": false
   },
+  "react/no-invalid-html-attribute": {
+    "name": "react/no-invalid-html-attribute",
+    "value": "error",
+    "description": "Forbid attribute with an invalid values`",
+    "reason": "",
+    "badExample": "",
+    "goodExample": "",
+    "fixable": true,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": false
+  },
   "react/no-is-mounted": {
     "name": "react/no-is-mounted",
     "value": "error",
@@ -499,6 +521,17 @@
     "value": "off",
     "description": "禁止在一个文件创建两个组件",
     "reason": "有一个 bug：https://github.com/yannickcr/eslint-plugin-react/issues/1181",
+    "badExample": "",
+    "goodExample": "",
+    "fixable": false,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": false
+  },
+  "react/no-namespace": {
+    "name": "react/no-namespace",
+    "value": "error",
+    "description": "Enforce that namespaces are not used in React elements",
+    "reason": "",
     "badExample": "",
     "goodExample": "",
     "fixable": false,
@@ -615,6 +648,17 @@
     "extendsBaseRule": "",
     "requiresTypeChecking": false
   },
+  "react/no-unused-class-component-methods": {
+    "name": "react/no-unused-class-component-methods",
+    "value": "error",
+    "description": "Prevent declaring unused methods of component class",
+    "reason": "",
+    "badExample": "",
+    "goodExample": "",
+    "fixable": false,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": false
+  },
   "react/no-unused-prop-types": {
     "name": "react/no-unused-prop-types",
     "value": "off",
@@ -655,6 +699,17 @@
     "reason": "",
     "badExample": "<span class=\"token keyword\">const</span> Foo <span class=\"token operator\">=</span> <span class=\"token function\">createReactClass</span><span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Component should use es6 class instead of createClass&lt;br/&gt;&lt;span class='eslint-error-rule-id'&gt;eslint(react/prefer-es6-class)&lt;/span&gt;\"><span class=\"token punctuation\">{</span>\n  <span class=\"token function\">render</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">return</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n  <span class=\"token punctuation\">}</span><span class=\"token punctuation\">,</span>\n<span class=\"token punctuation\">}</span></mark><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
     "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n  <span class=\"token function\">render</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">return</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n  <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>",
+    "fixable": false,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": false
+  },
+  "react/prefer-exact-props": {
+    "name": "react/prefer-exact-props",
+    "value": "error",
+    "description": "Prefer exact proptype definitions",
+    "reason": "",
+    "badExample": "",
+    "goodExample": "",
     "fixable": false,
     "extendsBaseRule": "",
     "requiresTypeChecking": false
