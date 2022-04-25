@@ -11,10 +11,18 @@
     "test": "ts-node ./test/index.ts && npm run test:rulesCoverage",
     "test:rulesCoverage": "ts-node ./scripts/rulesCoverage.ts",
     "lint": "run-s eslint prettier",
-    "update": "npm install --save-dev @babel/eslint-parser@latest @babel/preset-react@latest @types/eslint@latest @types/prettier@latest @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest eslint@7 eslint-config-prettier@latest eslint-plugin-react@latest eslint-plugin-vue@latest prettier@latest typescript@latest vue-eslint-parser@latest",
+    "update": "npm install --save-dev @babel/eslint-parser@latest @babel/preset-react@latest @types/eslint@latest @types/prettier@latest @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest eslint@7 eslint-config-prettier@latest eslint-plugin-react@latest eslint-plugin-vue@7 prettier@latest typescript@latest vue-eslint-parser@latest",
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx,.vue --ignore-pattern \"bad.*\" .",
     "prettier": "prettier -l \"./**/*\""
   },
+  "files": [
+    "base.js",
+    "index.js",
+    "react.js",
+    "typescript.js",
+    "vue.js",
+    "README.md"
+  ],
   "homepage": "https://ineo6.github.io/eslint-config-magic/",
   "repository": {
     "type": "git",
@@ -52,7 +60,7 @@
     "doctrine": "^3.0.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-react": "7.28.0",
+    "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-vue": "^7.20.0",
     "insert-tag": "^0.1.2",
     "npm-run-all": "^4.1.5",
