@@ -21,6 +21,9 @@ jobs:
           node-version: '14'
 
       - name: Install
+        run: npm install
+
+      - name: Update
         run: npm run update
 
       - name: Run tests
