@@ -39,7 +39,7 @@ export const NAMESPACE_CONFIG = {
     rulePrefix: '@typescript-eslint/',
     ruleConfig: require('./rules/typescript.json'),
     getDocsUrl: (rule: string) =>
-      `https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/${rule.replace(
+      `https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/${rule.replace(
         /.*\//,
         '',
       )}.md`,
